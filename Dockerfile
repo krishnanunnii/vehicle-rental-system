@@ -5,8 +5,6 @@ WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 COPY web ./web
-COPY database ./database
-
 RUN apt-get update && apt-get install -y maven && rm -rf /var/lib/apt/lists/*
 
 RUN mvn dependency:copy-dependencies -DincludeScope=provided -DoutputDirectory=target/dependency
